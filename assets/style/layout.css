@@ -1,0 +1,64 @@
+.container {
+  max-width: 68.625rem;
+  margin-inline: auto;
+  margin-top: 4.75rem;
+
+  gap: 5.563rem;
+  flex-direction: column;
+}
+
+#logo-img {
+  width: 10.75rem;
+  display: block;
+}
+
+#app {
+  gap: 6.75rem;
+  align-items: center;
+}
+
+aside {
+  flex-direction: column;
+  gap: 2.375rem;
+
+  & header {
+    gap: 0.75rem;
+  }
+
+  & #info-container {
+    width: 24.125rem;
+    gap: 2.25rem;
+
+    & .app-info {
+      align-items: start;
+      gap: 0.5rem;
+
+      & .text-info {
+        font: var(--font-paragraph-small);
+      }
+    }
+  }
+}
+
+main {
+  & form {
+    gap: 2.5rem;
+
+    & header p {
+      font: var(--font-paragraph-large);
+    }
+
+    & fieldset {
+      border: none;
+      gap: 1.75rem;
+    }
+
+    .checkbox-wrapper {
+      gap: 0.5rem;
+
+      & label {
+        color: var(--content-primary);
+      }
+    }
+  }
+}

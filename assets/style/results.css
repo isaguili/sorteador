@@ -1,0 +1,93 @@
+#results {
+  align-items: center;
+  gap: 2.5rem;
+
+  & header {
+    align-items: center;
+
+    & span {
+      color: var(--content-secondary);
+      font: 700 1rem/150% "Roboto Mono", monospace;
+    }
+  }
+
+  & #drawn-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 6.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  & .number {
+    width: 5.25rem;
+    height: 5.25rem;
+    justify-content: center;
+    scale: 0;
+
+    animation: box-appear 3s linear forwards;
+
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      border-radius: 1.75rem;
+      z-index: -1;
+      background-color: var(--content-brand);
+      animation: rotate-bg 2.5s ease-out forwards 0.5s;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      color: var(--color-inverse);
+      font: 700 3rem/150% "Roboto Mono", monospace;
+      opacity: 0;
+      animation: number-appear 2s forwards 1s;
+    }
+  }
+}
+
+@keyframes box-appear {
+  0% {
+    scale: 0;
+  }
+  10% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes rotate-bg {
+  40% {
+    rotate: 360deg;
+  }
+  90% {
+    scale: 1;
+    rotate: 720deg;
+  }
+  100% {
+    scale: 0;
+    rotate: 720deg;
+  }
+}
+
+@keyframes number-appear {
+  10% {
+    opacity: 1;
+  }
+  80% {
+    color: var(--color-inverse);
+  }
+  100% {
+    opacity: 1;
+    color: var(--content-brand);
+  }
+}

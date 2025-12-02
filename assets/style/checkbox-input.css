@@ -1,0 +1,30 @@
+.checkbox-input {
+  appearance: none;
+  width: 1.875rem;
+  height: 1.25rem;
+  background-color: var(--content-tertiary);
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0.875rem;
+    height: 0.875rem;
+    background-color: var(--content-primary);
+    border-radius: 50%;
+    top: 50%;
+    left: 0.185rem;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+  }
+
+  &:checked {
+    background: var(--gradient-background);
+
+    &::before {
+      transform: translateX(0.69rem) translateY(-50%);
+    }
+  }
+}

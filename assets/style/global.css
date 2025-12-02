@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* content */
+  --content-primary: #ffffff;
+  --content-secondary: #c7c9cc;
+  --content-tertiary: #d9d9d9;
+  --content-brand: #c58de7;
+  --color-inverse: #030203;
+
+  /* background */
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222e;
+  --background-brand: #c58de7;
+  --background-gray: #3d3d3d;
+
+  /* gradients */
+  --gradient-background: linear-gradient(
+    90deg,
+    #d586e0 0%,
+    #b493ed 49%,
+    #91a1fa 100%
+  );
+
+  --gradient-border: conic-gradient(
+    from 90deg,
+    #77c0af 0%,
+    #d1dc97 14.84%,
+    #e9a9b3 32.15%,
+    #d586e0 65.79%,
+    #91a1fa 84.58%
+  );
+
+  --gradient-content: linear-gradient(
+    90deg, 
+    #c7c9cc 0%, 
+    #3d3d3d 100%);
+
+  /* fonts */
+  font-family: var(--font-family-roboto-flex);
+  color: var(--content-primary);
+
+  --font-family-sora: "Sora", sans-serif;
+  --font-family-roboto-flex: "Roboto Flex", sans-serif;
+  --font-family-roboto-mono: "Roboto Mono", monospace;
+
+  --font-display-large: 800 4.5rem/130% var(--font-family-sora);
+  --font-display-medium: 800 2.5rem/130% var(--font-family-sora);
+  --font-display-small: 700 2rem/130% var(--font-family-sora);
+
+  --font-paragraph-large: 500 1rem/150% var(--font-family-roboto-flex);
+  --font-paragraph-medium: 500 0.875rem/150% var(--font-family-roboto-flex);
+  --font-paragraph-small: 500 0.75rem/150% var(--font-family-roboto-flex);
+  --font-label-medium: 700 1.25rem/150% var(--font-family-roboto-flex);
+  --font-label-small: 700 1rem/150% var(--font-family-roboto-flex);
+}
+
+body {
+  background-color: var(--background-primary);
+}
+
+h1,
+h3,
+input {
+  text-transform: uppercase;
+}
+
+h1 {
+  font: var(--font-display-large);
+}
+
+h2 {
+  color: var(--content-brand);
+  font: var(--font-paragraph-medium);
+}
+
+h3 {
+  font: var(--font-label-medium);
+}
+
+p,
+label {
+  color: var(--content-secondary);
+}
+
+span {
+  text-transform: uppercase;
+  font: var(--font-paragraph-medium);
+}
+

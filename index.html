@@ -1,105 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta charset="UTF-8"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Sorteador</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/style/index.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
-        <img src="assets/images/logo.png" alt="logo" />
-      </header>
+    <div class="container flex">
+      <img src="assets/images/logo.png" alt="logo numbers" id="logo-img" />
 
-      <div id="app">
-        <aside>
-          <header>
+      <div id="app" class="flex">
+        <aside class="flex flex-columns">
+          <header class="flex flex-columns">
             <span>Online - gratuito</span>
             <h1>Sorteador de números</h1>
           </header>
 
-          <div class="appinfo">
-            <img
-              src="assets/images/talk-icon.svg"
-              alt="ícone de pessoa falando"
-            />
-            <div class="text-info">
-              <h2>Como funciona o sorteador de números?</h2>
-              <p>
-                O sorteador utiliza um algoritmo de geração aleatória para criar
-                números dentro do intervalo especificado pelo usuário.
-              </p>
+          <div id="info-container" class="flex flex-columns">
+            <div class="app-info flex">
+              <img
+                src="assets/images/talk-icon.svg"
+                alt="ícone de pessoa falando"
+              />
+              <div class="text-info">
+                <h2>Como funciona o sorteador de números?</h2>
+                <p>
+                  O sorteador utiliza um algoritmo de geração aleatória para
+                  criar números dentro do intervalo especificado pelo usuário.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="appinfo">
-            <img
-              src="assets/images/talk-icon.svg"
-              alt="ícone de pessoa falando"
-            />
-            <div class="text-info">
-              <h2>Posso escolher o intervalo dos números?</h2>
-              <p>
-                Sim, você pode definir os valores mínimo e máximo para o
-                intervalo dos números sorteados.
-              </p>
+            <div class="app-info flex">
+              <img
+                src="assets/images/talk-icon.svg"
+                alt="ícone de pessoa falando"
+              />
+              <div class="text-info">
+                <h2>Posso escolher o intervalo dos números?</h2>
+                <p>
+                  Sim, você pode definir os valores mínimo e máximo para o
+                  intervalo dos números sorteados.
+                </p>
+              </div>
             </div>
           </div>
         </aside>
 
-        <main>
-          <form action="">
+        <main class="flex flex-columns">
+          <form action="" class="flex flex-columns">
             <header>
-              <h3>Quero sortear</h3>
+              <h3>Quero sortear:</h3>
               <p>
                 defina o intervalo e a quantidade de números, clique em
                 "Sortear" e veja os resultados na tela. É rápido e fácil!
               </p>
             </header>
 
-            <fieldset>
-              <div class="input-wrapper">
-                <label for="amount-numbers">Números</label>
+            <fieldset class="flex flex-columns">
+              <div id="draw-settings" class="flex">
+                <div class="input-wrapper flex flex-columns">
+                  <label for="amount-numbers">Números</label>
+                  <div class="border-input">
+                    <input
+                      type="number"
+                      name="amount-numbers"
+                      id="amount-numbers"
+                      value="1"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-wrapper flex flex-columns">
+                  <label for="start-range">De</label>
+                  <div class="border-input">
+                    <input
+                      type="number"
+                      name="start-range"
+                      id="start-range"
+                      value="0"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-wrapper flex flex-columns">
+                  <label for="end-range">Até</label>
+                  <div class="border-input">
+                    <input
+                      type="number"
+                      name="end-range"
+                      id="end-range"
+                      value="100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="checkbox-wrapper flex">
                 <input
-                  type="number"
-                  name="amount-numbers"
-                  id="amount-numbers"
+                  type="checkbox"
+                  name="no-repeat"
+                  id="no-repeat"
+                  class="checkbox-input"
                 />
-              </div>
-
-              <div class="input-wrapper">
-                <label for="start-range">De</label>
-                <input type="number" name="start-range" id="start-range" />
-              </div>
-
-              <div class="input-wrapper">
-                <label for="end-range">Até</label>
-                <input type="number" name="end-range" id="end-range" />
-              </div>
-
-              <div class="checkbox-wrapper">
-                <label class="switch" for="no-repeat">
-                  <input type="checkbox" name="no-repeat" id="no-repeat" />
-                  <span class="slider"></span>
-                  Não repetir número
-                </label>
+                <label for="no-repeat">Não repetir números</label>
               </div>
             </fieldset>
 
-            <button>
+            <button id="draw-btn" class="flex">
               <span>Sortear</span>
               <img src="assets/images/arrow-icon.svg" alt="seta para direita" />
             </button>
 
-            <div class="results">
-              <h2>Resultado do sorteio</h2>
-              <p>1º resultado</p>
+            <div id="results" class="flex flex-columns">
+              <header class="flex flex-columns">
+                <h3>Resultado do sorteio</h3>
+                <span>1º resultado</span>
+              </header>
 
+              <div id="drawn-numbers">
+                <div class="number flex">
+                  <span>28</span>
+                </div>
+              </div>
+
+              <button id="repeat-btn" class="flex">
+                <span>Sortear novamente</span>
+                <div class="animation-repeat">
+                  <img 
+                    src="assets/images/play-icon.svg" 
+                    alt="ícone de play" 
+                    />              
+                </div>
+              </button>
             </div>
           </form>
         </main>
