@@ -9,13 +9,22 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
+
     <title>Sorteador</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/images/favicom.png"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="assets/style/index.css" />
   </head>
+
   <body>
     <div class="container flex">
-      <img src="assets/images/logo.png" alt="logo numbers" id="logo-img" />
+      <a href=""
+        ><img src="assets/images/logo.png" alt="logo numbers" id="logo-img"
+      /></a>
 
       <div id="app" class="flex">
         <aside class="flex flex-columns">
@@ -56,7 +65,7 @@
         </aside>
 
         <main class="flex flex-columns">
-          <form action="" class="flex flex-columns">
+          <form action="" id="drawing-container" class="flex flex-columns">
             <header>
               <h3>Quero sortear:</h3>
               <p>
@@ -66,39 +75,45 @@
             </header>
 
             <fieldset class="flex flex-columns">
-              <div id="draw-settings" class="flex">
+              <div class="flex" id="drawing-numbers">
                 <div class="input-wrapper flex flex-columns">
-                  <label for="amount-numbers">Números</label>
+                  <label for="quantity-input">Números</label>
                   <div class="border-input">
                     <input
                       type="number"
-                      name="amount-numbers"
-                      id="amount-numbers"
+                      name="quantity-input"
+                      id="quantity-input"
                       value="1"
+                      class="number-input"
+                      required
                     />
                   </div>
                 </div>
 
                 <div class="input-wrapper flex flex-columns">
-                  <label for="start-range">De</label>
+                  <label for="input-min">De</label>
                   <div class="border-input">
                     <input
                       type="number"
-                      name="start-range"
-                      id="start-range"
+                      name="input-min"
+                      id="input-min"
                       value="0"
+                      class="number-input"
+                      required
                     />
                   </div>
                 </div>
 
                 <div class="input-wrapper flex flex-columns">
-                  <label for="end-range">Até</label>
+                  <label for="input-max">Até</label>
                   <div class="border-input">
                     <input
                       type="number"
-                      name="end-range"
-                      id="end-range"
+                      name="input-max"
+                      id="input-max"
                       value="100"
+                      class="number-input"
+                      required
                     />
                   </div>
                 </div>
@@ -107,42 +122,73 @@
               <div class="checkbox-wrapper flex">
                 <input
                   type="checkbox"
-                  name="no-repeat"
-                  id="no-repeat"
+                  name="allow-repeats-checkbox"
+                  id="allow-repeats-checkbox"
                   class="checkbox-input"
                 />
-                <label for="no-repeat">Não repetir números</label>
+                <label for="allow-repeats-checkbox">Não repetir números</label>
+              </div>
+
+              <div 
+                id="error-message"
+                class="flex hidden"
+                aria-live="assertive"
+                aria-atomic="true"
+                aria-label="Mensagem de erro"
+              >
+                <img
+                  src="assets/images/alert-stroke-rounded.svg"
+                  alt="ícone de alerta"
+                />
+                <p></p>
+                <img
+                  src="assets/images/cancel-stroke-rounded.svg"
+                  alt="ícone de fechar"
+                  id="hide-error-message"
+                  role="button"
+                />
               </div>
             </fieldset>
 
-            <button id="draw-btn" class="flex">
+            <button id="btn-draw" class="flex">
               <span>Sortear</span>
               <img src="assets/images/arrow-icon.svg" alt="seta para direita" />
             </button>
-
-            <div id="results" class="flex flex-columns">
-              <header class="flex flex-columns">
-                <h3>Resultado do sorteio</h3>
-                <span>1º resultado</span>
-              </header>
-
-              <div id="drawn-numbers">
-                <div class="number flex">
-                  <span>28</span>
-                </div>
-              </div>
-
-              <button id="repeat-btn" class="flex">
-                <span>Sortear novamente</span>
-                <div class="animation-repeat">
-                  <img 
-                    src="assets/images/play-icon.svg" 
-                    alt="ícone de play" 
-                    />              
-                </div>
-              </button>
-            </div>
           </form>
+
+          <div
+            id="results-container"
+            class="flex flex-columns hidden"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-label="Resultados do Sorteio"
+          >
+            <header class="flex flex-columns">
+              <h3>Resultado do sorteio</h3>
+              <span>1º resultado</span>
+            </header>
+
+            <div id="drawn-numbers-display">
+              <!-- números aparecem aqui -->
+            </div>
+
+            <button
+              id="btn-repeat-draw"
+              class="flex opacity-animation"
+              disabled
+            >
+              <span>Sortear novamente</span>
+              <div class="animation-repeat">
+                <img src="assets/images/play-icon.svg" alt="ícone de play" />
+              </div>
+            </button>
+
+            <a href="" id="a-button">
+              <button id="btn-reset" class="flex opacity-animation" disabled>
+                <span>Escolher novos números</span>
+              </button>
+            </a>
+          </div>
         </main>
       </div>
     </div>

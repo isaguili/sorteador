@@ -49,7 +49,7 @@
   --font-family-roboto-flex: "Roboto Flex", sans-serif;
   --font-family-roboto-mono: "Roboto Mono", monospace;
 
-  --font-display-large: 800 4.5rem/130% var(--font-family-sora);
+  --font-display-large: 800 4.45rem/130% var(--font-family-sora);
   --font-display-medium: 800 2.5rem/130% var(--font-family-sora);
   --font-display-small: 700 2rem/130% var(--font-family-sora);
 
@@ -92,4 +92,3 @@ span {
   text-transform: uppercase;
   font: var(--font-paragraph-medium);
 }
-

@@ -15,3 +15,14 @@ input::-webkit-inner-spin-button {
 .hidden {
   display: none;
 }
+
+.opacity-animation {
+  opacity: 0;
+  animation: disappear-display 1s ease forwards;
+}
+
+@keyframes disappear-display {
+  to {
+    transform: translateY(-1rem);
+  }
+}

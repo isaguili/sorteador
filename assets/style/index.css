@@ -2,6 +2,7 @@
 @import url(./utilities.css);
 @import url(./layout.css);
 @import url(./button.css);
-@import url(./numbers-input.css);
-@import url(./checkbox-input.css);
+@import url(./drawing-numbers.css);
+@import url(./checkbox.css);
 @import url(./results.css);
+@import url(./error-message.css);

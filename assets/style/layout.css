@@ -1,9 +1,9 @@
 .container {
   max-width: 68.625rem;
   margin-inline: auto;
-  margin-top: 4.75rem;
+  margin-top: 4rem;
 
-  gap: 5.563rem;
+  gap: 3rem;
   flex-direction: column;
 }
 
@@ -19,14 +19,23 @@
 
 aside {
   flex-direction: column;
+  max-width: 31.75rem;
   gap: 2.375rem;
 
   & header {
     gap: 0.75rem;
+
+    & span {
+      font-family: var(--font-family-roboto-mono);
+      position: relative;
+      background: linear-gradient(90deg, #c7c9cc 0%, #3d3d3d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   & #info-container {
-    width: 24.125rem;
+    max-width: 24.125rem;
     gap: 2.25rem;
 
     & .app-info {
@@ -41,6 +50,8 @@ aside {
 }
 
 main {
+  width: 30.125rem;
+
   & form {
     gap: 2.5rem;
 
@@ -59,6 +70,52 @@ main {
       & label {
         color: var(--content-primary);
       }
+    }
+  }
+}
+
+@media (width < 75em) {
+  .container {
+    max-width: 390px;
+    padding: 2rem;
+    gap: 2.875rem;
+    flex-direction: column;
+  }
+
+  #logo-img {
+    margin-inline: auto;
+  }
+
+  #app {
+    gap: 5rem;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+
+    & aside {
+      max-width: 20.375rem;
+
+      & header {
+        position: absolute;
+        top: 0;
+
+        & span {
+          font-size: 1rem;
+        }
+
+        & h1 {
+          font: var(--font-display-medium);
+        }
+      }
+    }
+  }
+
+  main {
+    width: 19.9375rem;
+    margin-top: 12.875rem;
+
+    & form header p {
+      font: var(--font-paragraph-medium);
     }
   }
 }

@@ -28,8 +28,8 @@ button {
     &::before {
       position: absolute;
       content: "";
-      width: 30em;
-      height: 30em;
+      width: 40em;
+      height: 40em;
       top: -400%;
       border-radius: 50%;
       background: var(--gradient-border);
@@ -42,12 +42,6 @@ button {
       height: calc(100% - 4px);
       top: 2px;
     }
-  }
-}
-
-#draw-btn:hover {
-  & img {
-    animation: arrow-move 1s linear infinite;
   }
 }
 
@@ -72,10 +66,23 @@ button {
   }
 }
 
-#repeat-btn:hover {
+#btn-draw:hover {
+  & img {
+    animation: arrow-move 1s linear infinite;
+  }
+}
+
+#btn-repeat-draw:hover {
   & .animation-repeat::before {
     animation: arrow-rotate 1s linear infinite;
   }
+}
+
+#a-button {
+  width: 100%;
+  text-decoration: none;
+  font: var(--font-paragraph-medium);
+  color: inherit;
 }
 
 @keyframes arrow-move {
