@@ -1,4 +1,4 @@
-#results {
+#results-container {
   align-items: center;
   gap: 2.5rem;
 
@@ -11,7 +11,7 @@
     }
   }
 
-  & #drawn-numbers {
+  & #drawn-numbers-display {
     display: flex;
     flex-wrap: wrap;
     min-height: 6.25rem;
