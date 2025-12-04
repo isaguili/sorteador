@@ -22,3 +22,37 @@ const hideMessageBtn = document.getElementById("hide-error-message")
 
 //variables
 let drawingAcc = 1
+
+
+
+
+// functions
+function createArray() {
+  const minValue = parseInt(inputMin.value);
+  const maxValue = parseInt(inputMax.value);
+  const quantityValue = parseInt(quantityInput.value);
+
+  const numbersArray = [];
+
+  for (let i = 0; i < quantityValue; i++) {
+    const randomNumber = generateRandomNumber(minValue, maxValue);
+    const isRepeat = numbersArray.includes(randomNumber);
+
+    if (allowRepetitionCheckbox.checked && isRepeat) {
+      i--;
+    } else {
+      numbersArray.push(randomNumber);
+    }
+  }
+
+  return numbersArray;
+}
+
+function generateRandomNumber(min, max) {
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomNumber;
+}
+
+
+
+
