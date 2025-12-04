@@ -1,30 +1,29 @@
 //dom elements
 //numbers
-const numberInputs = document.querySelectorAll(".number-input")
-const quantityInput = document.getElementById("quantity-input")
-const inputMin = document.getElementById("input-min")
-const inputMax = document.getElementById("input-max")
+const numberInputs = document.querySelectorAll(".number-input");
+const quantityInput = document.getElementById("quantity-input");
+const inputMin = document.getElementById("input-min");
+const inputMax = document.getElementById("input-max");
 
 //buttons
-const allowRepetitionCheckbox = document.getElementById("allow-repeats-checkbox")
-const btnDraw = document.getElementById("btn-draw")
-const btnDrawAgain = document.getElementById("btn-repeat-draw")
-const btnReset = document.getElementById("btn-reset")
+const allowRepetitionCheckbox = document.getElementById(
+  "allow-repeats-checkbox"
+);
+const btnDraw = document.getElementById("btn-draw");
+const btnDrawAgain = document.getElementById("btn-repeat-draw");
+const btnReset = document.getElementById("btn-reset");
 
 //containers
-const drawingContainer = document.getElementById("drawing-container")
-const resultsContainer = document.getElementById("results-container")
-const drawnNumbersDisplay = document.getElementById("drawn-numbers-display")
-const errorMessageContainer = document.querySelector("#error-message")
+const drawingContainer = document.getElementById("drawing-container");
+const resultsContainer = document.getElementById("results-container");
+const drawnNumbersDisplay = document.getElementById("drawn-numbers-display");
+const errorMessageContainer = document.querySelector("#error-message");
 
 //error message
-const hideMessageBtn = document.getElementById("hide-error-message")
+const hideMessageBtn = document.getElementById("hide-error-message");
 
 //variables
-let drawingAcc = 1
-
-
-
+let drawingAcc = 1;
 
 // functions
 function createArray() {
@@ -53,6 +52,25 @@ function generateRandomNumber(min, max) {
   return randomNumber;
 }
 
+function generateDisplayNumber(randomNumber) {
+  const numberDisplay = document.createElement("div");
+  const numberSpan = document.createElement("span");
 
+  numberDisplay.classList.add("number", "flex");
+  numberSpan.textContent = randomNumber;
 
+  drawnNumbersDisplay.append(numberDisplay);
+  numberDisplay.append(numberSpan);
+}
 
+function showResultContainer() {
+  resultsContainer.classList.remove("hidden");
+  drawingContainer.classList.add("hidden");
+}
+
+function showResultBtn() {
+  btnDrawAgain.classList.remove("opacity-animation");
+  btnDrawAgain.removeAttribute("disabled");
+  btnReset.classList.remove("opacity-animation");
+  btnReset.removeAttribute("disabled");
+}
