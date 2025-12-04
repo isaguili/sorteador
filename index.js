@@ -74,3 +74,34 @@ function showResultBtn() {
   btnReset.classList.remove("opacity-animation");
   btnReset.removeAttribute("disabled");
 }
+
+function showErrorMessage(message) {
+  const errorMessage = document.querySelector("#error-message p");
+  errorMessage.textContent = message;
+  errorMessageContainer.classList.remove("hidden");
+}
+
+// async function
+function createDelay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function updateDisplayNumbers(drawNumbers) {
+  for (let number of drawNumbers) {
+    generateDisplayNumber(number);
+    await createDelay(3000);
+  }
+  showResultBtn();
+}
+
+function updateDrawingAcc() {
+  const drawingAccField = document.querySelector(
+    "#results-container header span"
+  );
+  drawingAcc++;
+  drawingAccField.textContent = `${drawingAcc}º resultado`;
+}
+
+function clearDrawnNumbersDisplay() {
+  drawnNumbersDisplay.innerHTML = "";
+}
