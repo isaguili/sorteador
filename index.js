@@ -53,7 +53,11 @@ btnDraw.addEventListener("click", (event) => {
       );
     } else if (inputMin.value > inputMax.value) {
       throw new Error(
-        "O número inserido no campo “De” deve sempre ser menor que o número inserido no campo “Até”"
+        "O número inserido no campo “DE” deve sempre ser menor que o número inserido no campo “ATÉ”"
+      );
+    } else if (inputMin.value === "" || inputMax.value === "") {
+      throw new Error(
+        "Os campos “DE” e “ATÉ” não podem estar vazios."
       );
     } else {
       const drawnNumbers = createArray();

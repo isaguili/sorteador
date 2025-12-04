@@ -61,7 +61,7 @@ button {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../images/repeat-icon.svg);
+    background-image: url(../icons/repeat-icon.svg);
     background-repeat: no-repeat;
   }
 }

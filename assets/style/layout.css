@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 
-#logo-img {
+#logo-img, #logo-img img {
   width: 10.75rem;
   display: block;
 }
