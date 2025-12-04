@@ -1,0 +1,34 @@
+#error-message {
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  background-color: var(--background-gray);
+  border-radius: .5rem;
+  
+  animation: error-Appear .5s ease forwards;
+
+  & img {
+    width: 2rem;
+  }
+
+  & img:nth-child(3) {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  & p {
+    color: white;
+  }
+}
+
+@keyframes error-Appear {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
