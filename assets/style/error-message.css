@@ -1,5 +1,7 @@
 #error-message {
-  width: 100%;
+  position: absolute;
+  z-index: 2;
+  width: 30.125rem;
   align-items: center;
   gap: 1rem;
   padding: 1rem;
