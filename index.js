@@ -25,6 +25,59 @@ const hideMessageBtn = document.getElementById("hide-error-message");
 //variables
 let drawingAcc = 1;
 
+//events
+//prevent comma and period input in numeric field
+numberInputs.forEach((input) => {
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "," || e.key === ".") {
+      e.preventDefault();
+    }
+  });
+});
+
+//draw buttons
+btnDraw.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  try {
+    if (quantityInput.value <= 0) {
+      throw new Error(
+        "A quantidade de números sorteados não pode ser igual a 0."
+      );
+    } else if (
+      allowRepetitionCheckbox.checked &&
+      quantityInput.value > inputMax.value - inputMin.value + 1
+    ) {
+      throw new Error(
+        "A quantidade de números sorteados não pode ser maior que o intervalo de números possíveis sem repetição."
+      );
+    } else if (inputMin.value > inputMax.value) {
+      throw new Error(
+        "O número inserido no campo “De” deve sempre ser menor que o número inserido no campo “Até”"
+      );
+    } else {
+      const drawnNumbers = createArray();
+      updateDisplayNumbers(drawnNumbers);
+      showResultContainer();
+    }
+  } catch (error) {
+    showErrorMessage(error.message);
+  }
+});
+
+btnDrawAgain.addEventListener("click", () => {
+  clearDrawnNumbersDisplay();
+  const drawnNumbers = createArray();
+  updateDisplayNumbers(drawnNumbers);
+  showResultContainer();
+  updateDrawingAcc();
+});
+
+//close error message
+hideMessageBtn.onclick = () => {
+  errorMessageContainer.classList.add("hidden");
+};
+
 // functions
 function createArray() {
   const minValue = parseInt(inputMin.value);
